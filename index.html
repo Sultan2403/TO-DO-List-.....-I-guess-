@@ -9,21 +9,42 @@
 </head>
 
 <body>
-    <h1>Grocery Lists</h1>
-    <form>
-        <h2>Search and select for groceries</h2>
-        <div class="inp-field-container">
-            <input type="text" id="inp-field" placeholder=" " />
-            <label for="inp-field">Search for groceries...</label>
+
+    <div class="main-container">
+        <form>
+            <legend>Grocery Lists</legend>
+            <h2>Search and select groceries</h2>
+            <div class="inp-field-container">
+                <input type="text" id="inp-field" placeholder=" " />
+                <label for="inp-field">Search for groceries...</label>
+            </div>
+
+
+            <h3 id="dynamic-text"></h3>
+            <div class="display-container">
+                <ul id="result-list"></ul>
+            </div>
+
+
+
+        </form>
+        <div class="main-container-2">
+            <div class="selected-stuff-container">
+                <h3>Your Selected Groceries</h3>
+                <div id="Selected-groceries-container">
+                    <ul id="selected-items-container"></ul>
+                    <div id="total-amount"></div>
+                </div>
+
+            </div>
+            <div id="total-amount-display">
+                <div id="display-price-on-btn-click"></div>
+            </div>
         </div>
+    </div>
 
 
-        <h3>Matching groceries</h3>
-        <ul id="result-list"></ul>
 
-        <h3>Selected groceries</h3>
-        <div id="Selected-groceries-container"></div>
-    </form>
 
     <script src="./script.js"></script>
 </body>
