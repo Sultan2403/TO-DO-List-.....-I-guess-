@@ -141,6 +141,10 @@ ul div:hover:has(.itemName, .itemPrice) {
   background-color: beige;
 }
 
+.not-found-msg {
+  font-size: large;
+}
+
 li {
   font-size: 1.6rem;
   margin: 0.3rem;
@@ -204,4 +208,57 @@ button {
   font-size: large;
 }
 
+.selectedItemsDisplayContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.quantityCounter {
+  font-size: 1.6rem;
+}
+
 /* COMPONENTS */
+
+body {
+  background-color: #fff8e7;
+  color: #1b1b1b;
+}
+form,
+.selected-stuff-container {
+  background: white;
+  color: #1b1b1b;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+button {
+  background-color: #ff9800;
+  color: white;
+}
+button:hover {
+  background-color: #f57c00;
+}
+
+ul div:hover {
+  background-color: #f1f5f9;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+  color: #f57c00;
+}
+
+.main-container {
+  background-color: #f9fafb;
+}
+form {
+  background-color: white;
+}
+.selected-stuff-container {
+  background-color: #e0e7ff; /* or a soft variant from your palette */
+}
+
+.selectedItemsDisplayContainer {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

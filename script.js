@@ -73,10 +73,18 @@ function selectedGroceriesNotSelected(currentGrocery) {
 }
 function displayItemsWeHave(matches) {
   searchResults.innerHTML = "";
+  if (matches.length === 0) {
+    const p = document.createElement("p");
+    p.textContent = "No groceries found 😔";
+    p.className = "not-found-msg";
+    searchResults.appendChild(p);
+    return;
+  }
+
   dynamic_h3_text.textContent = `Some of our groceries include`;
-  // let moreItemsTxt = document.createElement("p");
-  // moreItemsTxt.textContent = `More Items Coming Soon! 😉`;
-  // inpFieldContainer.appendChild(moreItemsTxt);
+  let moreItemsTxt = document.createElement("p");
+  moreItemsTxt.textContent = `More Items Coming Soon! 😉`;
+  setTimeout(() => inpFieldContainer.appendChild(moreItemsTxt));
   matches.forEach((groceries) => {
     const li_1 = document.createElement("li");
     const li_2 = document.createElement("li");
@@ -94,7 +102,9 @@ function displayItemsWeHave(matches) {
       displaySelectedGroceries();
       inpField.value = groceries.name;
       inpField.value = "";
+
       totalAmountDisplay.textContent = `Your total amount to pay is: $${totalPrice}`;
+      setTimeout(() => displayItemsWeHave(groceryItems), 500); //Simply delays when the embedde code runs.... :)
     });
   });
 }
@@ -107,9 +117,11 @@ function displaySelectedGroceries() {
   selectedGroceries.forEach((groceries) => {
     const index = selectedGroceries.indexOf(groceries);
     const divSelected = document.createElement("div");
+    divSelected.className = "selectedItemsDisplayContainer";
     const li_selected_Name = document.createElement("li");
     const li_selected_Price = document.createElement("li");
     const quantityCounter = document.createElement("div");
+    quantityCounter.className = "quantityCounter";
     quantityCounter.textContent = `x(${groceries.quantity})`;
     const reduceButton = document.createElement("button");
     reduceButton.textContent = "Reduce quantity";
@@ -140,7 +152,7 @@ function displaySelectedGroceries() {
     totalPrice += groceries.price * groceries.quantity;
     deleteButton.textContent = `Remove item`;
     deleteButton.addEventListener("click", () => {
-      selectedGroceries.splice(index, 1);
+      selectedGroceries.splice(index, 1); // Uses splice to smartly remove items
       displaySelectedGroceries();
       console.log(selectedGroceries);
       totalAmountDisplay.textContent = `Your total amount to pay is: $${totalPrice}`;
@@ -153,6 +165,7 @@ function displaySelectedGroceries() {
 function removeItem() {}
 
 displayItemsWeHave(groceryItems); // Just displays the items we currently have in stock :)
+
 const totalPriceBtn = document.createElement("button");
 totalAmountDisplay2.appendChild(totalPriceBtn);
 totalPriceBtn.textContent = `Calculate Price`;
