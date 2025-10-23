@@ -80,11 +80,6 @@ function displayItemsWeHave(matches) {
     searchResults.appendChild(p);
     return;
   }
-  document.addEventListener("DOMContentLoaded", () => {
-    const moreItemsTxt = document.createElement("p");
-    moreItemsTxt.textContent = `More Items Coming Soon! 😉`;
-    inpFieldContainer.appendChild(moreItemsTxt);
-  });
   dynamic_h3_text.textContent = `Some of our groceries include`;
 
   matches.forEach((groceries) => {

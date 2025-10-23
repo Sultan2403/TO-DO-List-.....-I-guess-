@@ -289,6 +289,11 @@ form {
 #display-price-on-btn-click {
   font-size: 1.6rem;
 }
+
+.selected-stuff-container {
+  width: 95%;
+}
+
 @media (max-width: 2880px) {
   html {
     font-size: 130%;
@@ -346,9 +351,9 @@ form {
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1400px) {
   html {
-    font-size: 100%;
+    font-size: 58.25%;
   }
 }
 
