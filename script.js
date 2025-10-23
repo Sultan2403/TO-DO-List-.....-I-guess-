@@ -80,11 +80,13 @@ function displayItemsWeHave(matches) {
     searchResults.appendChild(p);
     return;
   }
-
+  document.addEventListener("DOMContentLoaded", () => {
+    const moreItemsTxt = document.createElement("p");
+    moreItemsTxt.textContent = `More Items Coming Soon! 😉`;
+    inpFieldContainer.appendChild(moreItemsTxt);
+  });
   dynamic_h3_text.textContent = `Some of our groceries include`;
-  let moreItemsTxt = document.createElement("p");
-  moreItemsTxt.textContent = `More Items Coming Soon! 😉`;
-  setTimeout(() => inpFieldContainer.appendChild(moreItemsTxt));
+
   matches.forEach((groceries) => {
     const li_1 = document.createElement("li");
     const li_2 = document.createElement("li");
@@ -169,6 +171,7 @@ displayItemsWeHave(groceryItems); // Just displays the items we currently have i
 const totalPriceBtn = document.createElement("button");
 totalAmountDisplay2.appendChild(totalPriceBtn);
 totalPriceBtn.textContent = `Calculate Price`;
+totalPriceBtn.className = "calcBtn";
 totalPriceBtn.addEventListener("click", () => {
   displayPrice.textContent = `Your total amount to pay is: $${totalPrice}`;
   setTimeout(() => {
