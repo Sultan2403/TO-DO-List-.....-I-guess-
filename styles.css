@@ -320,9 +320,6 @@ form {
 }
 
 @media (max-width: 1999px) {
-  html {
-    /* font-size: 105%; */
-  }
   form {
     flex: 6;
   }
