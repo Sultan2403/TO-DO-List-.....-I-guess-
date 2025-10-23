@@ -273,11 +273,15 @@ form {
   align-self: center;
 }
 
-.help {
-  display: none;
+p {
   font-size: 1.6rem;
   color: rgb(116, 136, 4);
 }
+
+.help {
+  display: none;
+}
+
 .main-container-2 {
   width: 95%;
   height: 95%;
@@ -327,9 +331,6 @@ form {
   .main-container {
     flex-wrap: wrap;
   }
-  .help {
-    display: block;
-  }
 }
 
 @media (max-width: 1500px) {
@@ -360,6 +361,9 @@ form {
 @media (max-width: 790px) {
   html {
     font-size: 66.65%;
+  }
+  .help {
+    display: block;
   }
 }
 
